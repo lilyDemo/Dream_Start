@@ -51,6 +51,14 @@ public class Main {
 			CarMap.put(car.getId(), car);
 		}
 		
+		//获取各个路口可达关系
+		for(CrossInfo v : CrossMap.values())
+        {
+			v.accessCross(v.getCrossId(), RoadMap);
+//			v.accessCross(v.getCrossId(), RoadMap);
+        }
+		
+		
 		
 		
 		  // TODO: write answer.txt
@@ -59,9 +67,9 @@ public class Main {
         logger.info("End...");
     }
   
-    public List<String> creatRoad(int  originC,int dest) {
-    	
-    }
+//    public List<String> creatRoad(int  originC,int dest) {
+//    	
+//    }
     /**
      * 
      * @param filePath

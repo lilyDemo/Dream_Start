@@ -1,5 +1,8 @@
 package com.huawei;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class CrossInfo {
@@ -85,5 +88,90 @@ public class CrossInfo {
     		return 3;
     	}
 	}
+	
+	/**
+	 * 获取可达路口
+	 * @param origin
+	 * @param dest
+	 * @return
+	 */
+	public List<Integer> accessCross(int crossId, HashMap<Integer,RoadInfo> RoadMap) {
+		List<Integer> accessCrossResult = new ArrayList<Integer>();
+		if(roadId1 != -1)
+		{
+			RoadInfo road1 = RoadMap.get(roadId1);
+			if(road1.getIsDuplex() == 1) //道路是双向的
+			{
+				if(crossId == road1.getStartCross())
+					accessCrossResult.add(road1.getEndCross());
+				else
+					accessCrossResult.add(road1.getStartCross());
+			}
+			else{ //单向的则crossId必须为StartCross
+				if(crossId == road1.getStartCross())
+					accessCrossResult.add(road1.getEndCross());
+			}
+		}
+		if(roadId2 != -1)
+		{
+			RoadInfo road1 = RoadMap.get(roadId2);
+			if(road1.getIsDuplex() == 1) //道路是双向的
+			{
+				if(crossId == road1.getStartCross())
+					accessCrossResult.add(road1.getEndCross());
+				else
+					accessCrossResult.add(road1.getStartCross());
+			}
+			else{ //单向的则crossId必须为StartCross
+				if(crossId == road1.getStartCross())
+					accessCrossResult.add(road1.getEndCross());
+			}
+		}
+		if(roadId3 != -1)
+		{
+			RoadInfo road1 = RoadMap.get(roadId3);
+			if(road1.getIsDuplex() == 1) //道路是双向的
+			{
+				if(crossId == road1.getStartCross())
+					accessCrossResult.add(road1.getEndCross());
+				else
+					accessCrossResult.add(road1.getStartCross());
+			}
+			else{ //单向的则crossId必须为StartCross
+				if(crossId == road1.getStartCross())
+					accessCrossResult.add(road1.getEndCross());
+			}
+		}
+		if(roadId4 != -1)
+		{
+			RoadInfo road1 = RoadMap.get(roadId4);
+			if(road1.getIsDuplex() == 1) //道路是双向的
+			{
+				if(crossId == road1.getStartCross())
+					accessCrossResult.add(road1.getEndCross());
+				else
+					accessCrossResult.add(road1.getStartCross());
+			}
+			else{ //单向的则crossId必须为StartCross
+				if(crossId == road1.getStartCross())
+					accessCrossResult.add(road1.getEndCross());
+			}
+		}	
+    	return accessCrossResult;
+	}
+	
+	
+	
+//	/**
+//	 * 获取车子当前速度
+//	 * @param roadSpeed 道路最高限速
+//	 * @param carSpeed 车子最高限速
+//	 * @param roadNowSpeed 道路当前速度
+//	 */
+//	public int curSpeed(int roadSpeed,int carSpeed,int roadNowSpeed)
+//	{
+//		int temp1 = Math.min(roadSpeed, carSpeed);
+//		return Math.min(temp1,roadNowSpeed);
+//	}
 	
 }
