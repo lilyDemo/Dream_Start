@@ -63,13 +63,27 @@ public class CrossInfo {
 			for(int i = 0;i < 5;i++) {
 				ak[i] = Integer.parseInt(RoadInformation[i]);
 			}
-			//System.out.println("cross:" + ak[0] + " " + ak[1] + " " + ak[2] + " " + ak[3] + " " + ak[4]);
 			setCrossInfo(ak[0],ak[1],ak[2],ak[3],ak[4]);
 		}else {
 			Logger.getLogger("数据错误");
 			return;
 		}	
 		return;
+	}
+	/**
+	 * 获取道路优先级
+	 * @param origin
+	 * @param dest
+	 * @return
+	 */
+	public int getPriority(int origin,int dest) {
+    	if((this.roadId1==origin&&this.roadId2==dest)||(this.roadId2==origin&&this.roadId3==dest)||(this.roadId3==origin&&this.roadId4==dest)||(this.roadId4==origin&&this.roadId1==dest)) {
+    		return 2;
+    	}else if((this.roadId1==origin&&this.roadId3==dest)||(this.roadId2==origin&&this.roadId4==dest)||(this.roadId3==origin&&this.roadId1==dest)||(this.roadId4==origin&&this.roadId2==dest)) {
+    		return 1;
+    	}else {
+    		return 3;
+    	}
 	}
 	
 }
