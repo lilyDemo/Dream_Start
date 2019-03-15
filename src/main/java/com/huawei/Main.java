@@ -15,6 +15,7 @@ public class Main {
     private static HashMap<Integer, RoadInfo> RoadMap = new HashMap<>();
     private static HashMap<Integer, CrossInfo> CrossMap = new HashMap<>();
     private static HashMap<Integer, Car> CarMap = new HashMap<>();
+    private static HashMap<Integer,String> answer = new HashMap<>();
     public static void main(String[] args)
     {
     	 if (args.length != 4) {
@@ -52,13 +53,20 @@ public class Main {
 		
 		
 		
-		
 		  // TODO: write answer.txt
         logger.info("Start write output file");
 
         logger.info("End...");
     }
-    
+  
+    public List<String> creatRoad(int  originC,int dest) {
+    	
+    }
+    /**
+     * 
+     * @param filePath
+     * @return
+     */
     public static List<String> readFile(String filePath) {
 		List<String> list = new ArrayList<>();
 		String encoding = "UTF-8";
