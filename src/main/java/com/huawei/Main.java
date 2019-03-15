@@ -58,10 +58,9 @@ public class Main {
 
         logger.info("End...");
     }
-    private int getPriority(int cross,int origin,int dest) {
-    	CrossInfo crossinfo = CrossMap.get(cross);
+  
+    public List<String> creatRoad(int  originC,int dest) {
     	
-    	return 0;
     }
     /**
      * 
